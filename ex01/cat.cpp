@@ -6,13 +6,13 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:57:21 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/15 12:03:34 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/16 14:36:21 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cat.hpp"
 
-Cat::Cat(): Animal(){
+Cat::Cat(): Animal(), brain(new Brain()){
     type = "Cat";
     std::cout << "Cat " << type << " is created." << std::endl;
 }

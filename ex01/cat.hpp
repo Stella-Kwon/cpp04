@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:57:44 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/15 12:10:06 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/16 13:42:53 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 #define CAT_HPP
 
 # include "animal.hpp"
+# include "brain.hpp"
 
 class Cat : public Animal{
+    private :
+            Brain* brain;
     protected :
         std::string type;
     public :

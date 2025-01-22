@@ -6,13 +6,13 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:26:37 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/22 12:35:18 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/22 13:01:59 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dog.hpp"
 #include "cat.hpp"
-
+#include "animal.hpp"
 
 void deepcopycheck()
 {
@@ -57,16 +57,19 @@ void deepcopycheck()
 
 int main()
 {
-    const int arraySize = 10;
-    // 포인터로 선언했을 때:
-    Animal* animals[arraySize]; //for the polymorphism :  need to use pointer otherwise it will only hold Animal object
-    // animals[0] = new Dog();
-    // animals[0]->makeSound();  // "Woof! Woof!"
+    // AAnimal test = AAnimal(); // not allowed.
+    // AAnimal *test = new AAnimal(); // not allowed.
+    
+    // Animal a;
+    // std::cout << "Animal a has soudn of " << std::endl;
+    // a.makeSound() ;
 
-    // // 포인터 없이 선언했을 때:
-    // Animal animals[4];
-    // // Dog를 직접 넣을 수 없음
-    // animals[0].makeSound();   //"NO Sound for Animal"
+    
+    // AAnimal *test = new Dog();
+    // std::cout << "pointer abstract class has Dog object type : " << test->getType() << std::endl;
+    
+    const int arraySize = 10;
+    AAnimal* animals[arraySize];
     for (int i = 0; i < arraySize; i++)
     {
         if (i < arraySize/2)
@@ -76,7 +79,7 @@ int main()
     }
     
     for (int i = 0; i < arraySize; i++) {
-        std::cout << "Animal " << i << " (Type: " << animals[i]->getType() << ") makes sound: ";
+        std::cout << "AAnimal " << i << " (Type: " << animals[i]->getType() << ") makes sound: ";
         animals[i]->makeSound();
     }
 
@@ -85,13 +88,13 @@ int main()
     }
     
     
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
     
-    std::cout << "Animal j : " << "Type: " <<  j->getType() << " makes sound: "; 
+    std::cout << "AAnimal j : " << "Type: " <<  j->getType() << " makes sound: "; 
     j->makeSound();
 
-    std::cout << "Animal i : " << "Type: " <<  i->getType() << " makes sound: "; 
+    std::cout << "AAnimal i : " << "Type: " <<  i->getType() << " makes sound: "; 
     i->makeSound();
     delete j;//should not create a leak
     delete i;

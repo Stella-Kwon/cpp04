@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:57:21 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/22 12:40:22 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/22 12:45:03 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // Using smart pointers like std::unique_ptr<Brain> instead of raw pointers is a modern and safer alternative to manage memory automatically.
 
 
-Dog::Dog(): Animal(), brain(std::make_unique<Brain>()), type("Dog"){
+Dog::Dog(): AAnimal(), brain(std::make_unique<Brain>()), type("Dog"){
     std::cout << "Dog " << type << " is created." << std::endl;
 }
 
@@ -27,7 +27,7 @@ Dog::~Dog(){
 }
 
 
-Dog::Dog(const Dog& other): Animal(other), brain(std::make_unique<Brain>(*other.brain)), type("Dog"){
+Dog::Dog(const Dog& other): AAnimal(other), brain(std::make_unique<Brain>(*other.brain)), type("Dog"){
     
     std::cout << "Dog is copied to " << type << "." << std::endl;
 }
@@ -35,7 +35,7 @@ Dog::Dog(const Dog& other): Animal(other), brain(std::make_unique<Brain>(*other.
 Dog& Dog::operator=(const Dog& other){
     if (this != &other)
     {
-        Animal::operator=(other); // It only operates on the Animal part of the Dog object.
+        AAnimal::operator=(other); // It only operates on the AAnimal part of the Dog object.
         type = other.type;
         // delete brain;
         brain = std::make_unique<Brain>(); // new will make the pointer that pointing to Brain(*other.brain)
@@ -46,7 +46,7 @@ Dog& Dog::operator=(const Dog& other){
 
 // using new
 
-// Dog::Dog(): Animal(), brain(new Brain()), type("Dog"){
+// Dog::Dog(): AAnimal(), brain(new Brain()), type("Dog"){
 //     // type = "Dog";
 //     std::cout << "Dog " << type << " is created." << std::endl;
 // }
@@ -56,7 +56,7 @@ Dog& Dog::operator=(const Dog& other){
 //     std::cout << "Dog " << type << " is destructed." << std::endl;
 // }
 
-// Dog::Dog(const Dog& other): Animal(other), brain(new Brain(*other.brain)){
+// Dog::Dog(const Dog& other): AAnimal(other), brain(new Brain(*other.brain)){
     
 //     std::cout << "Dog is copied to " << type << "." << std::endl;
 // }
@@ -64,7 +64,7 @@ Dog& Dog::operator=(const Dog& other){
 // Dog& Dog::operator=(const Dog& other){
 //     if (this != &other)
 //     {
-//         Animal::operator=(other); // It only operates on the Animal part of the Dog object.
+//         AAnimal::operator=(other); // It only operates on the AAnimal part of the Dog object.
 //         type = other.type;
 //         delete brain;
 //         brain = new Brain(*other.brain); // new will make the pointer that pointing to Brain(*other.brain)

@@ -3,6 +3,7 @@ NAME = Animal
 COMPILER = c++
 
 SRC = 	main.cpp\
+		aanimal.cpp\
 		animal.cpp\
 		dog.cpp\
 		cat.cpp\

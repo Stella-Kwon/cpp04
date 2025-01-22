@@ -6,17 +6,17 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:57:44 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/22 12:05:08 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/22 12:45:19 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-# include "animal.hpp"
+# include "aanimal.hpp"
 # include "brain.hpp"
 # include <memory> // std::unique_ptr
-class Dog : public Animal{
+class Dog : public AAnimal{
     private :
         // Brain* brain;
         std::unique_ptr<Brain> brain; // unique ptr

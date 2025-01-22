@@ -6,17 +6,17 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:57:44 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/22 12:36:30 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/22 12:45:32 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-# include "animal.hpp"
+# include "aanimal.hpp"
 # include "brain.hpp"
 
-class Cat : public Animal{
+class Cat : public AAnimal{
     private :
             Brain* brain;
     protected :
